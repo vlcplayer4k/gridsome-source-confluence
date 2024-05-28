@@ -51,6 +51,7 @@ export default class Confluence {
         },
         function (error) {
           PENDING_REQUESTS = Math.max(0, PENDING_REQUESTS - 1);
+          console.log("Error headers", error.response.headers);
           return Promise.reject(error);
         }
       );
